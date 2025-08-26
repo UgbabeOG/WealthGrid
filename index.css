@@ -1,0 +1,109 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: #f9f9f9;
+  color: #333;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Navbar */
+.navbar {
+  background: #001f3f;
+  color: #fff;
+  padding: 1rem 0;
+}
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-size: 1.5rem;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+}
+.btn {
+  background: #ff4136;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+/* Hero */
+.hero {
+  background: url("https://via.placeholder.com/1200x500") no-repeat center center/cover;
+  color: #fff;
+  text-align: center;
+  padding: 100px 20px;
+}
+.hero h2 {
+  font-size: 2.5rem;
+}
+.hero p {
+  margin: 1rem 0;
+  font-size: 1.2rem;
+}
+
+/* Sections */
+section {
+  padding: 50px 0;
+}
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Cards */
+.service-cards, .plan-cards, .testimonial-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+.card, .plan, .testimonial {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Partners */
+.partners {
+  text-align: center;
+}
+.partner-logos {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+.partner-logos img {
+  max-width: 120px;
+}
+
+/* Footer */
+.footer {
+  background: #001f3f;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
