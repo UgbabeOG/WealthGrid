@@ -10,7 +10,7 @@
     <!-- Navbar -->
     <header class="navbar">
       <div class="container nav-container">
-        <h1 class="logo">WealthGrid/h1>
+        <h1 class="logo">WealthGrid</h1>
         <nav>
           <ul class="nav-links">
             <li><a href="#about">About</a></li>
@@ -26,7 +26,44 @@
 
     <!-- Hero -->
     <section class="hero">
-      <div class="container">
+      <div class="hero-carousel-bg">
+        <div class="hero-carousel">
+          <div class="carousel-slide active">
+            <img
+              src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80"
+              alt="Real Estate"
+            />
+            <div class="carousel-caption">
+              <h3>Investing in Real Estate</h3>
+              <p>Grow your wealth with trusted investment opportunities.</p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img
+              src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=1200&q=80"
+              alt="Crypto"
+            />
+            <div class="carousel-caption">
+              <h3>Invest in Crypto</h3>
+              <p>
+                Unlock the future of finance with secure crypto investments.
+              </p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img
+              src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=1200&q=80"
+              alt="Success"
+            />
+            <div class="carousel-caption">
+              <h3>Let Us Guide You</h3>
+              <p>Let us guide you to your success.</p>
+            </div>
+          </div>
+        </div>
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="container hero-content">
         <h2>Investing in Real Estate</h2>
         <p>Grow your wealth with trusted investment opportunities.</p>
         <a href="#" class="btn">Get Started</a>
@@ -37,8 +74,18 @@
     <section id="about" class="about container">
       <h2>About Us</h2>
       <p>
-        WealthGrid is fully Approved and officially registered company whose activities are regulated by the financial control authorities under the jurisdiction of the New Zealand. Accepting our terms of coorperation, you can be absolutely sure of getting a guaranteed profit and full return on your investment. We Trade and Earn. You share the returns. <br />
-        We have a strategy for growth based on achieving long-term results for our existing clients, while also improving the distribution and penetration of our products among new client markets. <br /> We are an international financial company engaged in investment activities, which are related to trading on financial markets and cryptocurrency exchanges performed by qualified professional traders.
+        WealthGrid is fully Approved and officially registered company whose
+        activities are regulated by the financial control authorities under the
+        jurisdiction of the New Zealand. Accepting our terms of coorperation,
+        you can be absolutely sure of getting a guaranteed profit and full
+        return on your investment. We Trade and Earn. You share the returns.
+        <br />
+        We have a strategy for growth based on achieving long-term results for
+        our existing clients, while also improving the distribution and
+        penetration of our products among new client markets. <br />
+        We are an international financial company engaged in investment
+        activities, which are related to trading on financial markets and
+        cryptocurrency exchanges performed by qualified professional traders.
       </p>
     </section>
 
@@ -95,10 +142,39 @@
     <!-- Partners -->
     <section id="partners" class="partners container">
       <h2>Our Trusted Partners</h2>
-      <div class="partner-logos">
-        <img src="https://via.placeholder.com/120x50" alt="Partner 1" />
-        <img src="https://via.placeholder.com/120x50" alt="Partner 2" />
-        <img src="https://via.placeholder.com/120x50" alt="Partner 3" />
+      <div class="partners-grid">
+        <div class="partner-card">
+          <img
+            src="https://via.placeholder.com/120x50?text=Partner+1"
+            alt="Partner 1"
+          />
+          <h3>Alpha Investments</h3>
+          <p>Leading global investment firm with a focus on innovation.</p>
+        </div>
+        <div class="partner-card">
+          <img
+            src="https://via.placeholder.com/120x50?text=Partner+2"
+            alt="Partner 2"
+          />
+          <h3>CryptoTrust</h3>
+          <p>Secure and reliable cryptocurrency solutions for all investors.</p>
+        </div>
+        <div class="partner-card">
+          <img
+            src="https://via.placeholder.com/120x50?text=Partner+3"
+            alt="Partner 3"
+          />
+          <h3>RealEstatePro</h3>
+          <p>Top-tier real estate investment opportunities worldwide.</p>
+        </div>
+        <div class="partner-card">
+          <img
+            src="https://via.placeholder.com/120x50?text=Partner+4"
+            alt="Partner 4"
+          />
+          <h3>FinTech Solutions</h3>
+          <p>Innovative financial technology for modern wealth management.</p>
+        </div>
       </div>
     </section>
 
@@ -114,6 +190,31 @@
           <p>"Amazing returns on my investment within a year!"</p>
           <span>- Sarah L.</span>
         </div>
+      </div>
+    </section>
+
+    <!-- Contact Us -->
+    <section id="contact" class="contact container">
+      <h2>Contact Us</h2>
+      <form class="contact-form">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+      <div class="contact-info">
+        <p>Email: support@wealthgrid.com</p>
+        <p>Phone: +1 (555) 123-4567</p>
+        <p>Address: 123 WealthGrid Ave, Wellington, NZ</p>
       </div>
     </section>
 
