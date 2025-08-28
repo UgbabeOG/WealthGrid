@@ -1,3 +1,65 @@
+/* Steps Section Styling */
+.steps-section {
+  background: #fff;
+}
+.steps-row {
+  gap: 0.5rem;
+}
+.step-card {
+  background: #f8f9fa;
+  border-radius: 1.1rem;
+  box-shadow: 0 2px 16px rgba(0, 31, 63, 0.07);
+  transition: box-shadow 0.2s, transform 0.2s;
+  border: 1.5px solid #e3e8ff;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.step-card:hover {
+  box-shadow: 0 4px 24px rgba(0, 31, 63, 0.13);
+  transform: translateY(-4px) scale(1.03);
+}
+.step-number {
+  width: 54px;
+  height: 54px;
+  background: linear-gradient(135deg, #2563eb 60%, #fcb42d 100%);
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem auto;
+  box-shadow: 0 2px 8px rgba(0, 31, 63, 0.1);
+}
+.steps-section .section-title {
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: #2563eb;
+  letter-spacing: 1px;
+}
+@media (max-width: 900px) {
+  .step-card {
+    min-height: 260px;
+  }
+}
+@media (max-width: 600px) {
+  .steps-row {
+    flex-direction: column;
+  }
+  .step-card {
+    min-height: 180px;
+    padding: 1.2rem 0.7rem;
+  }
+  .step-number {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+}
 /* Custom Ribbon Colors for Gallery */
 .ribbon-crypto {
   background: linear-gradient(90deg, #fcb42d 60%, #f59e42 100%);
@@ -927,6 +989,74 @@ body {
   opacity: 0;
   transition: opacity 0.7s;
   z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* end carousel-slide */
+}
+.carousel-slide .container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  text-align: center;
+}
+.carousel-slide h1,
+.carousel-slide p,
+.carousel-slide a.btn {
+  text-align: center;
+}
+.carousel-slide h1 {
+  color: #fff;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.18), 0 1.5px 0 #2563eb;
+  font-size: 2.7rem;
+  font-weight: 800;
+  margin-bottom: 1.2rem;
+}
+.carousel-slide p {
+  color: #f3f4f6;
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.13);
+}
+.carousel-slide a.btn {
+  margin: 0 0.5rem 0.5rem 0.5rem;
+  min-width: 140px;
+  font-size: 1.08rem;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 31, 63, 0.1);
+}
+@media (max-width: 900px) {
+  .carousel-slide h1 {
+    font-size: 2rem;
+  }
+  .carousel-slide p {
+    font-size: 1.05rem;
+  }
+}
+@media (max-width: 600px) {
+  .carousel-slide .container {
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+  }
+  .carousel-slide h1 {
+    font-size: 1.2rem;
+    margin-bottom: 0.7rem;
+  }
+  .carousel-slide p {
+    font-size: 0.98rem;
+    margin-bottom: 0.7rem;
+  }
+  .carousel-slide a.btn {
+    min-width: 100px;
+    font-size: 0.98rem;
+  }
 }
 .carousel-slide.active {
   opacity: 1;
