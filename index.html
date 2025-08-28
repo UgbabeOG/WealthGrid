@@ -17,6 +17,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Font Awesome CDN for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <meta property="og:url" content="index.html" />
     <meta property="og:type" content="wealthGridfinance.com" />
     <meta property="og:title" content="wealthGridfinance.com" />
@@ -58,7 +60,7 @@
     <!-- Hero/Carousel Section -->
     <section class="hero">
       <div class="carousel" id="hero-carousel">
-        <div class="carousel-slide active" style="background-image: url('trade/public/ona/images/main.jpg');">
+        <div class="carousel-slide active" style="background-image: url('/grww.avif');">
           <div class="container">
             <h1 class="display-3 font-weight-bold">LET US GUIDE YOU TO YOUR <span>SUCCESS</span></h1>
             <p class="text-lg mb-4">Investing with a Difference</p>
@@ -66,7 +68,7 @@
             <a class="btn btn-light text-primary" href="trade/about.html">Learn More</a>
           </div>
         </div>
-        <div class="carousel-slide" style="background-image: url('trade/public/ona/images/coin.jpg');">
+        <div class="carousel-slide" style="background-image: url('/crypto.avif');">
           <div class="container">
             <h1 class="display-3 font-weight-bold">INVESTING IN <span>CRYPTOCURRENCIES</span></h1>
             <p class="text-lg mb-4">Your financial breakthrough</p>
@@ -74,7 +76,7 @@
             <a class="btn btn-light text-primary" href="trade/services-3.html">Cryptocurrency</a>
           </div>
         </div>
-        <div class="carousel-slide" style="background-image: url('trade/public/ona/images/estate.jpg');">
+        <div class="carousel-slide" style="background-image: url('/realestate.avif');">
           <div class="container">
             <h1 class="display-3 font-weight-bold">INVESTING IN <span>REAL ESTATE</span></h1>
             <p class="text-lg mb-4">Best offers real estate market.</p>
@@ -84,7 +86,7 @@
         </div>
       </div>
     </section>
-
+<!-- about us section -->
     <section class="py-4">
     <div class="container">
       <div class="row">
@@ -118,7 +120,7 @@
     </div>
   </section>
 
-
+<!-- pricing section -->
   <section class="py-6">
     <div class="container">
       <div class="row">
@@ -270,52 +272,54 @@
     </div>
   </section>
 
-  <section class="hero py-4">
-    <div class="container position-relative">
-      <ol class="breadcrumb pl-0  justify-content-center">
-        <li style="color: white; text-transform:uppercase" class="breadcrumb-item active">Knowledge Base </li>
-      </ol>
-      <h1 class="hero-heading">Frequently Asked Questions</h1>
-      <div class="row">
-        <div class="col-xl-8 mx-auto">
-          <div class="faq-accordion" id="faqAccordion">
-            <div class="faq-item">
-              <button class="faq-question">How long does my deposit take before it can reflect on my WealthGrid Finance Investment account dashboard?</button>
-              <div class="faq-answer">
-                <p>Your deposit will be reflected once it has been confirmed by our finance department and your investment will be running. Please note, your profit and capital will be credited once the investment cycle has been completed.</p>
+
+    <!-- FAQ Section (moved here) -->
+    <section class="hero py-4">
+      <div class="container position-relative">
+        <ol class="breadcrumb pl-0  justify-content-center">
+          <li style="color: white; text-transform:uppercase" class="breadcrumb-item active">Knowledge Base </li>
+        </ol>
+        <h1 class="hero-heading">Frequently Asked Questions</h1>
+        <div class="row">
+          <div class="col-xl-8 mx-auto">
+            <div class="faq-accordion" id="faqAccordion">
+              <div class="faq-item">
+                <button class="faq-question">How long does my deposit take before it can reflect on my WealthGrid Finance Investment account dashboard?</button>
+                <div class="faq-answer">
+                  <p>Your deposit will be reflected once it has been confirmed by our finance department and your investment will be running. Please note, your profit and capital will be credited once the investment cycle has been completed.</p>
+                </div>
               </div>
-            </div>
-            <div class="faq-item">
-              <button class="faq-question">Can I have more than two accounts?</button>
-              <div class="faq-answer">
-                <p>We do not allow multiple accounts except only for our investors on the Premium plan.</p>
+              <div class="faq-item">
+                <button class="faq-question">Can I have more than two accounts?</button>
+                <div class="faq-answer">
+                  <p>We do not allow multiple accounts except only for our investors on the Premium plan.</p>
+                </div>
               </div>
-            </div>
-            <div class="faq-item">
-              <button class="faq-question">How long does it take to process my withdrawal?</button>
-              <div class="faq-answer">
-                <p>Once we receive your withdrawal request we process immediately and send to your bitcoin, Ethereum and usdt wallet.</p>
+              <div class="faq-item">
+                <button class="faq-question">How long does it take to process my withdrawal?</button>
+                <div class="faq-answer">
+                  <p>Once we receive your withdrawal request we process immediately and send to your bitcoin, Ethereum and usdt wallet.</p>
+                </div>
               </div>
+              <div class="text-center mt-5"><a class="btn btn-primary" href="trade/faqs.html">See more FAQs</a></div>
             </div>
-            <div class="text-center mt-5"><a class="btn btn-primary" href="trade/faqs.html">See more FAQs</a></div>
           </div>
         </div>
       </div>
-    </div>
-    <script>
-      // Simple accordion logic
-      document.addEventListener('DOMContentLoaded', function() {
-        document.querySelectorAll('.faq-question').forEach(function(btn) {
-          btn.addEventListener('click', function() {
-            const answer = btn.nextElementSibling;
-            const isOpen = answer.classList.contains('open');
-            document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
-            if (!isOpen) answer.classList.add('open');
+      <script>
+        // Simple accordion logic
+        document.addEventListener('DOMContentLoaded', function() {
+          document.querySelectorAll('.faq-question').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+              const answer = btn.nextElementSibling;
+              const isOpen = answer.classList.contains('open');
+              document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+              if (!isOpen) answer.classList.add('open');
+            });
           });
         });
-      });
-    </script>
-  </section>
+      </script>
+    </section>
 
   <section class="py-5 position-relative dark-overlay">
     <img class="bg-image" src="trade/public/ona/images/home3.jpg" alt="">
@@ -335,29 +339,46 @@
         </div>
         <div class="partners-grid">
           <div class="partner-card">
-            <a href="http://binance.com/" target="_blank"><img src="trade/public/ona/partner/6.png" alt="Binance"></a>
+            <a href="https://binance.com/" target="_blank" aria-label="Binance"><i class="fa-brands fa-binance fa-3x"></i></a>
           </div>
           <div class="partner-card">
-            <a href="http://coinbase.com/" target="_blank"><img src="trade/public/ona/partner/3.png" alt="Coinbase"></a>
+            <a href="https://coinbase.com/" target="_blank" aria-label="Coinbase"><i class="fa-brands fa-coinbase fa-3x"></i></a>
           </div>
           <div class="partner-card">
-            <a href="http://paxful.com/" target="_blank"><img src="trade/public/ona/partner/4.png" alt="Paxful"></a>
+            <a href="https://paxful.com/" target="_blank" aria-label="Paxful">
+              <svg class="partner-svg" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="24" cy="24" r="22" fill="#4B2ABE"/>
+                <path d="M24 13L32 35H28L24 25L20 35H16L24 13Z" fill="#fff"/>
+              </svg>
+            </a>
           </div>
           <div class="partner-card">
-            <a href="http://crypto.com/" target="_blank"><img src="trade/public/ona/partner/1.png" alt="Crypto.com"></a>
+            <a href="https://crypto.com/" target="_blank" aria-label="Crypto.com">
+              <svg class="partner-svg" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="24" cy="24" r="22" fill="#103F68"/>
+                <polygon points="24,14 34,20 34,32 24,38 14,32 14,20" fill="#fff"/>
+                <polygon points="24,18 30,22 30,30 24,34 18,30 18,22" fill="#103F68"/>
+              </svg>
+            </a>
           </div>
           <div class="partner-card">
-            <a href="http://blockfi.com/" target="_blank"><img src="trade/public/ona/partner/2.png" alt="BlockFi"></a>
+            <a href="https://blockfi.com/" target="_blank" aria-label="BlockFi">
+              <svg class="partner-svg" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="8" y="8" width="32" height="32" rx="8" fill="#2E77D0"/>
+                <circle cx="24" cy="24" r="10" fill="#fff"/>
+                <circle cx="24" cy="24" r="6" fill="#2E77D0"/>
+              </svg>
+            </a>
           </div>
           <div class="partner-card">
-            <a href="http://etoro.com/" target="_blank"><img src="trade/public/ona/partner/5.png" alt="eToro"></a>
+            <a href="https://etoro.com/" target="_blank" aria-label="eToro"><i class="fa-brands fa-ethereum fa-3x"></i></a>
           </div>
         </div>
       </div>
     </section>
-
+<!-- investors choice -->
   <section class="py-4 position-relative dark-overlay mb-5">
-    <img class="bg-image" src="trade/public/ona/images/home1.jpg" alt="">
+    <img class="bg-image" src="growth.avif" alt="">
     <div class="container">
       <div class="overlay-content text-white py-lg-5 text-center">
         <p class="subtitle text-white letter-spacing-4 mb-4">#1 INVESTORS' CHOICE</p>
@@ -371,7 +392,7 @@
       </div>
     </div>
   </section>
-
+<!-- invest section -->
   <section class="py-2 bg-gray-100">
     <div class="container">
       <div class="row">
@@ -391,45 +412,38 @@
           <div class="row gallery mb-3 mt-5 px-1">
             <div class="col-lg-6 col-6 mb-2">
               <a href="trade/services-3.html">
-                <img class="img-fluid rounded" src="trade/public/ona/images/img1.jpg" alt="">
-                <div class="ribbon ribbon-warning">Cryptocurrency</div>
+                <img class="img-fluid rounded" src="img1.jpg" alt="">
+                <div class="ribbon ribbon-crypto">Cryptocurrency</div>
               </a>
             </div>
             <div class="col-lg-6 col-6 mb-2">
               <a href="services-10.html">
-                <img class="img-fluid rounded" src="trade/public/ona/images/img2.jpg" alt="">
-                <div class="ribbon ribbon-primary">Stock</div>
+                <img class="img-fluid rounded" src="img2.jpg" alt="">
+                <div class="ribbon ribbon-stock">Stock</div>
               </a>
             </div>
-          </div>
-
-          <div class="row" id="homeMenu">
-            <!-- venue item-->
-            <div class="col-6 col-sm-6 col-lg-3 mb-5">
-              <a href="trade/services-5.html">
-                <i class="fas fa-home abtIcon"></i>
-                <span>Real Estate</span>
+            <div class="col-lg-6 col-6 mb-2">
+              <a href="services-10.html">
+                <img class="img-fluid rounded" src="oil.avif" alt="">
+                <div class="ribbon ribbon-primary">Oil</div>
               </a>
             </div>
-            <!-- item-->
-            <div class="col-6 col-sm-6 col-lg-3 mb-5">
-              <a href="trade/services-6.html">
-                <i class="fas fa-oil-can abtIcon"></i>
-                <span>Oil</span>
+            <div class="col-lg-6 col-6 mb-2">
+              <a href="services-10.html">
+                <img class="img-fluid rounded" src="gold.webp" alt="">
+                <div class="ribbon ribbon-primary">Gold</div>
               </a>
             </div>
-
-            <div class="col-6 col-sm-6 col-lg-3 mb-5">
-              <a href="trade/services-9.html">
-                <i class="fas fa-coins abtIcon"></i>
-                <span>Gold</span>
+            <div class="col-lg-6 col-6 mb-2">
+              <a href="services-10.html">
+                <img class="img-fluid rounded" src="forex.avif" alt="">
+                <div class="ribbon ribbon-primary">forex</div>
               </a>
             </div>
-
-            <div class="col-6 col-sm-6 col-lg-3 mb-5">
-              <a href="trade/services-8.html">
-                <i class="fas fa-chart-line abtIcon"></i>
-                <span>Forex</span>
+            <div class="col-lg-6 col-6 mb-2">
+              <a href="services-10.html">
+                <img class="img-fluid rounded" src="real.webp" alt="">
+                <div class="ribbon ribbon-primary">Real Estate</div>
               </a>
             </div>
           </div>
@@ -439,7 +453,7 @@
           <div style="width:100%;" class="bg-gray-200 rounded p-3 ">
             <div class="tradingview-widget-container">
               <div id="tradingview_f4341"></div>
-              <script type="text/javascript" src="../s3.tradingview.com/tv.js"></script>
+              <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
               <script type="text/javascript">
                 new TradingView.MediumWidget({
                   "symbols": [
@@ -479,7 +493,7 @@
   </section>
 
   <section class="p-3">
-    <div class="container py-4 px-3 px-lg-5 rounded-lg shadow mb-5" style="background-image: url(trade/public/ona/images/xx.png); background-position: center; background-size: cover; background-repeat: no-repeat;">
+    <div class="container py-4 px-3 px-lg-5 rounded-lg shadow mb-5" style="background-image: url(/realest.jpg); background-position: center; background-size: cover; background-repeat: no-repeat;">
       <div class="row">
         <div class="col-lg-6 mb-5 mb-lg-0 text-center text-lg-left">
           <h2 class="text-primary">Investors #1 Choice</h2>
@@ -635,7 +649,7 @@
         <div class="row">
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card">
-              <div class="card-img-top bg-cover" style="background-image: url('trade/public/ona/serv/credit_card.png'); min-height: 200px;"></div>
+              <div class="card-img-top bg-cover" style="background-image: url('/credit_card.png'); min-height: 200px;"></div>
               <div class="card-body">
                 <h4>wealthGrid Finance INVESTMENT CREDIT CARD</h4>
                 <p class="text-muted">The partnership aims to fill a gap in the traditional financial system that has left many without access to essential banking products. According to a 2017 survey by the FDIC, 25 percent of U.S. households are unbanked or underbanked, while global numbers have reached a staggering 1.7 billion, according to data released by the World Bank. Through...</p>
@@ -644,7 +658,7 @@
           </div>
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card">
-              <div class="card-img-top bg-cover" style="background-image: url('trade/public/ona/serv/stock.jpg'); min-height: 200px;"></div>
+              <div class="card-img-top bg-cover" style="background-image: url('/stock.jpg'); min-height: 200px;"></div>
               <div class="card-body">
                 <h4>STOCK & SHARE</h4>
                 <p class="text-muted">A stock or share (also known as a company's "equity") is a financial instrument that represents ownership in a company or corporation and represents a proportionate claim on its assets (what it owns) and earnings...</p>
@@ -653,7 +667,7 @@
           </div>
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card">
-              <div class="card-img-top bg-cover" style="background-image: url('trade/public/ona/serv/2.png'); min-height: 200px;"></div>
+              <div class="card-img-top bg-cover" style="background-image: url('/growth.avif'); min-height: 200px;"></div>
               <div class="card-body">
                 <h4>CANNABIS</h4>
                 <p class="text-muted">For many years we have been working conscientiously and with the most diverse technologies and means. We have constantly successfully completed our projects...</p>

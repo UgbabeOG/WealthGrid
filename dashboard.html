@@ -135,6 +135,11 @@
         background-color: rgba(220, 53, 69, 0.1);
         color: #dc3545; /* red */
       }
+      .btn-success {
+        color: #fff;
+        background-color: #28a745;
+        border-color: #28a745;
+      }
     </style>
     <script src="index.js"></script>
   </head>
@@ -206,6 +211,22 @@
           <a href="#" class="btn btn-primary">Make a Deposit</a>
           <a href="#" class="btn btn-outline-primary">Withdraw Funds</a>
           <a href="trade/plans.html" class="btn btn-primary">New Investment</a>
+          <a
+            href="#"
+            class="btn btn-success"
+            onclick="connectWallet(); return false;"
+            >Connect Crypto Wallet</a
+          >
+        </section>
+
+        <!-- Investment Performance Chart -->
+        <section class="investment-chart-section" style="margin-bottom: 40px">
+          <div class="transactions-section">
+            <h2 class="mb-4 font-weight-bold">Investment Performance</h2>
+            <div style="height: 300px">
+              <canvas id="investmentChart"></canvas>
+            </div>
+          </div>
         </section>
 
         <!-- Recent Transactions -->
@@ -340,5 +361,114 @@
         </div>
       </div>
     </footer>
+
+    <!-- Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Custom script for chart initialization -->
+    <script>
+      function connectWallet() {
+        // In a real application, this would trigger a library like Web3Modal or WalletConnect
+        alert(
+          "Crypto wallet connection initiated.\n\n(This is a placeholder for actual wallet integration with libraries like Ethers.js or Web3.js.)"
+        );
+        // Example check for MetaMask:
+        // if (typeof window.ethereum !== 'undefined') { console.log('MetaMask is installed!'); }
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const ctx = document.getElementById("investmentChart").getContext("2d");
+        // Create gradient fill
+        const gradient = ctx.createLinearGradient(0, 0, 0, 300);
+        gradient.addColorStop(0, "rgba(54, 162, 235, 0.35)");
+        gradient.addColorStop(1, "rgba(54, 162, 235, 0.05)");
+
+        const investmentChart = new Chart(ctx, {
+          type: "line",
+          data: {
+            labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
+            datasets: [
+              {
+                label: "Investment Value",
+                data: [20000, 20500, 21500, 22000, 23500, 24000, 25750],
+                backgroundColor: gradient,
+                borderColor: "#2563eb",
+                borderWidth: 3,
+                tension: 0.4,
+                fill: true,
+                pointBackgroundColor: "#2563eb",
+                pointBorderColor: "#fff",
+                pointRadius: 5,
+                pointHoverRadius: 7,
+                shadowOffsetX: 0,
+                shadowOffsetY: 4,
+                shadowBlur: 8,
+                shadowColor: "rgba(54, 162, 235, 0.2)",
+              },
+              {
+                label: "Deposits",
+                data: [18000, 19000, 20000, 21000, 22000, 23000, 24000],
+                backgroundColor: "rgba(16, 185, 129, 0.12)",
+                borderColor: "#10b981",
+                borderWidth: 2,
+                tension: 0.4,
+                fill: false,
+                pointBackgroundColor: "#10b981",
+                pointBorderColor: "#fff",
+                pointRadius: 4,
+                pointHoverRadius: 6,
+                borderDash: [6, 6],
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: {
+                labels: {
+                  font: { size: 16, weight: "bold" },
+                  color: "#222",
+                },
+              },
+              tooltip: {
+                callbacks: {
+                  label: function (context) {
+                    let label = context.dataset.label || "";
+                    if (label) {
+                      label += ": ";
+                    }
+                    if (context.parsed.y !== null) {
+                      label += new Intl.NumberFormat("en-US", {
+                        style: "currency",
+                        currency: "USD",
+                      }).format(context.parsed.y);
+                    }
+                    return label;
+                  },
+                },
+              },
+            },
+            scales: {
+              y: {
+                beginAtZero: false,
+                ticks: {
+                  color: "#222",
+                  font: { size: 14 },
+                  callback: function (value) {
+                    return "$" + value.toLocaleString();
+                  },
+                },
+                grid: { color: "rgba(0,0,0,0.07)" },
+              },
+              x: {
+                ticks: { color: "#222", font: { size: 14 } },
+                grid: { color: "rgba(0,0,0,0.04)" },
+              },
+            },
+          },
+        });
+      });
+    </script>
   </body>
 </html>

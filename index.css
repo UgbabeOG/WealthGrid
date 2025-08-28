@@ -1,3 +1,180 @@
+/* Custom Ribbon Colors for Gallery */
+.ribbon-crypto {
+  background: linear-gradient(90deg, #fcb42d 60%, #f59e42 100%);
+}
+.ribbon-stock {
+  background: linear-gradient(90deg, #2563eb 60%, #0074d9 100%);
+}
+.ribbon-realestate {
+  background: linear-gradient(90deg, #10b981 60%, #34d399 100%);
+}
+.ribbon-oil {
+  background: linear-gradient(90deg, #f87171 60%, #fbbf24 100%);
+}
+.ribbon-gold {
+  background: linear-gradient(90deg, #ffd700 60%, #f59e42 100%);
+  color: #222;
+}
+.ribbon-forex {
+  background: linear-gradient(90deg, #6366f1 60%, #06b6d4 100%);
+}
+/* Ribbon Overlay Styling */
+.gallery .col-lg-6 {
+  position: relative;
+}
+.ribbon {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 2;
+  padding: 0.35em 1.1em;
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: #fff;
+  border-radius: 0.7em;
+  box-shadow: 0 2px 8px rgba(0, 31, 63, 0.1);
+  pointer-events: none;
+  letter-spacing: 0.5px;
+}
+.ribbon-warning {
+  background: linear-gradient(90deg, #fcb42d 60%, #f59e42 100%);
+}
+.ribbon-primary {
+  background: linear-gradient(90deg, #2563eb 60%, #0074d9 100%);
+}
+@media (max-width: 600px) {
+  .ribbon {
+    top: 8px;
+    left: 8px;
+    font-size: 0.92rem;
+    padding: 0.25em 0.7em;
+  }
+}
+/* Market SVG Icon Styling */
+.market-svg {
+  width: 2.5em;
+  height: 2.5em;
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 0.3em;
+  border-radius: 0.7em;
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(0, 31, 63, 0.07);
+  padding: 0.3em;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.market-svg:hover {
+  box-shadow: 0 4px 24px rgba(0, 31, 63, 0.13);
+  transform: scale(1.08);
+}
+/* Partner SVG Icon Styling */
+.partners-grid .partner-svg {
+  width: 3em;
+  height: 3em;
+  display: block;
+  margin: 0 auto;
+  border-radius: 1.2rem;
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(0, 31, 63, 0.07);
+  padding: 0.5em;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.partners-grid .partner-svg:hover {
+  box-shadow: 0 4px 24px rgba(0, 31, 63, 0.13);
+  transform: scale(1.08);
+}
+/* Font Awesome Partner Icon Styling */
+.partners-grid .fa-brands {
+  color: #222;
+  background: #fff;
+  border-radius: 1.2rem;
+  padding: 1.1rem 1.3rem;
+  box-shadow: 0 2px 12px rgba(0, 31, 63, 0.07);
+  margin: 0 auto;
+  display: block;
+  transition: color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+.partners-grid .fa-brands:hover {
+  color: #0074d9;
+  box-shadow: 0 4px 24px rgba(0, 31, 63, 0.13);
+  transform: scale(1.08);
+}
+.partners-grid .partner-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 90px;
+}
+/* Hero Carousel Image Styles */
+.hero-carousel {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 2rem auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.2rem;
+  background: #f8f9fa;
+  box-shadow: 0 2px 16px rgba(0, 31, 63, 0.08);
+}
+.hero-carousel img {
+  width: 70%;
+  max-width: 420px;
+  height: auto;
+  margin: 2rem auto 1.5rem auto;
+  display: block;
+  border-radius: 1rem;
+  object-fit: contain;
+  box-shadow: 0 2px 12px rgba(0, 31, 63, 0.07);
+  background: #fff;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+@media (max-width: 900px) {
+  .hero-carousel {
+    max-width: 98vw;
+    border-radius: 0.8rem;
+  }
+  .hero-carousel img {
+    width: 85%;
+    max-width: 320px;
+    margin: 1.2rem auto 1rem auto;
+    border-radius: 0.7rem;
+  }
+}
+@media (max-width: 600px) {
+  .hero-carousel {
+    max-width: 100vw;
+    border-radius: 0.5rem;
+  }
+  .hero-carousel img {
+    width: 95%;
+    max-width: 220px;
+    margin: 0.7rem auto 0.7rem auto;
+    border-radius: 0.5rem;
+  }
+}
+/* Responsive and Clean Image Styles */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0.6rem;
+  box-shadow: 0 2px 12px rgba(0, 31, 63, 0.06);
+  margin: 0 auto;
+  background: #f8f9fa;
+  object-fit: cover;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+img:hover,
+img:focus {
+  box-shadow: 0 4px 24px rgba(0, 31, 63, 0.13);
+  transform: scale(1.025);
+}
+@media (max-width: 600px) {
+  img {
+    border-radius: 0.4rem;
+    box-shadow: 0 1px 6px rgba(0, 31, 63, 0.05);
+  }
+}
 /* FAQ Accordion Styles */
 .faq-accordion {
   margin-top: 2.5rem;
@@ -449,8 +626,20 @@ body {
   justify-content: space-between;
 }
 .navbar-brand img {
-  height: 60px;
+  height: 54px;
   width: auto;
+  max-width: 180px;
+  border-radius: 0.7em;
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(0, 31, 63, 0.07);
+  padding: 0.3em 0.7em;
+  object-fit: contain;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.navbar-brand img:hover,
+.navbar-brand img:focus {
+  box-shadow: 0 4px 24px rgba(0, 31, 63, 0.13);
+  transform: scale(1.04);
 }
 .navbar-nav {
   display: flex;
@@ -1013,8 +1202,20 @@ h2 {
   margin-bottom: 1.5rem;
 }
 .footer-logo img {
-  height: 70px;
+  height: 60px;
   width: auto;
+  max-width: 180px;
+  border-radius: 0.7em;
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(0, 31, 63, 0.07);
+  padding: 0.3em 0.7em;
+  object-fit: contain;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.footer-logo img:hover,
+.footer-logo img:focus {
+  box-shadow: 0 4px 24px rgba(0, 31, 63, 0.13);
+  transform: scale(1.04);
 }
 .footer-links {
   display: flex;
