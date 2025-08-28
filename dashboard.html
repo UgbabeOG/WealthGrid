@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Smartsupp Live Chat script -->
+    <script type="text/javascript">
+      var _smartsupp = _smartsupp || {};
+      _smartsupp.key = "aa5dfc8c69cf05f97dc3b69401005c95287af70d";
+      window.smartsupp ||
+        (function (d) {
+          var s,
+            c,
+            o = (smartsupp = function () {
+              o._.push(arguments);
+            });
+          o._ = [];
+          s = d.getElementsByTagName("script")[0];
+          c = d.createElement("script");
+          c.type = "text/javascript";
+          c.charset = "utf-8";
+          c.async = true;
+          c.src = "https://www.smartsuppchat.com/loader.js?";
+          s.parentNode.insertBefore(c, s);
+        })(document);
+    </script>
+    <noscript>
+      Powered by
+      <a href="https://www.smartsupp.com" target="_blank"
+        >Smartsupp</a
+      ></noscript
+    >
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:url" content="dashboard.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Dashboard | wealthGrid Finance" />
+    <meta
+      property="og:description"
+      content="Manage your investments and account with wealthGrid Finance."
+    />
+    <meta
+      property="og:image"
+      content="https://wealthGridfinance.com/images/logomain.png"
+    />
+    <title>Dashboard | wealthGrid Finance</title>
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="images/favicon2.png" />
+    <link rel="apple-touch-icon" href="images/favicon2.png" />
+    <!-- Custom WealthGrid CSS -->
+    <link rel="stylesheet" href="index.css" />
+    <style>
+      /* Dashboard Specific Styles */
+      body {
+        background-color: #f8f9fa; /* A light gray background */
+      }
+      .dashboard-main {
+        padding: 40px 0;
+      }
+      .dashboard-header {
+        margin-bottom: 30px;
+      }
+      .summary-card {
+        background: #fff;
+        border-radius: 0.5rem;
+        padding: 25px;
+        margin-bottom: 20px;
+        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+        transition: transform 0.2s;
+      }
+      .summary-card:hover {
+        transform: translateY(-5px);
+      }
+      .summary-card h4 {
+        font-size: 1rem;
+        color: #6c757d; /* muted text color */
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+      .summary-card .amount {
+        font-size: 2.2rem;
+        font-weight: bold;
+        color: #343a40; /* dark text color */
+      }
+      .quick-actions {
+        margin: 40px 0;
+        text-align: center;
+      }
+      .quick-actions .btn {
+        margin: 5px 10px;
+        padding: 12px 25px;
+        font-size: 1.1rem;
+      }
+      .transactions-section {
+        background: #fff;
+        padding: 30px;
+        border-radius: 0.5rem;
+        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+      }
+      .transactions-table {
+        width: 100%;
+        margin-top: 20px;
+        border-collapse: collapse;
+      }
+      .transactions-table th,
+      .transactions-table td {
+        padding: 15px;
+        text-align: left;
+        border-bottom: 1px solid #e9ecef;
+      }
+      .transactions-table th {
+        background-color: #f8f9fa;
+        font-weight: bold;
+      }
+      .transactions-table tbody tr:last-child td {
+        border-bottom: none;
+      }
+      .status {
+        padding: 5px 10px;
+        border-radius: 15px;
+        font-size: 0.8rem;
+        font-weight: bold;
+        text-transform: capitalize;
+      }
+      .status-completed,
+      .status-active {
+        background-color: rgba(40, 167, 69, 0.1);
+        color: #28a745; /* green */
+      }
+      .status-pending {
+        background-color: rgba(255, 193, 7, 0.1);
+        color: #ffc107; /* yellow */
+      }
+      .status-failed {
+        background-color: rgba(220, 53, 69, 0.1);
+        color: #dc3545; /* red */
+      }
+    </style>
+    <script src="index.js"></script>
+  </head>
+
+  <body>
+    <header class="navbar">
+      <div class="container">
+        <a class="navbar-brand" href="index.html"
+          ><img src="images/logomain.png" alt="wealthGrid Finance Logo"
+        /></a>
+        <button class="navbar-toggle" id="navbar-toggle" aria-label="Open menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+        <nav id="navbar-menu" class="navbar-menu">
+          <ul class="navbar-nav">
+            <li><a class="nav-link" href="index.html">Home</a></li>
+            <li>
+              <a class="nav-link" href="trade/services.html">Our Services</a>
+            </li>
+            <li>
+              <a class="nav-link" href="trade/plans.html">Investment Plans</a>
+            </li>
+            <li><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+            <li><a class="nav-link" href="#">Settings</a></li>
+            <li><a class="nav-link" href="index.html">Logout</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="dashboard-main">
+      <div class="container">
+        <section class="dashboard-header">
+          <h1 class="font-weight-bold">User Dashboard</h1>
+          <p class="text-muted">
+            Welcome back, User! Manage your investments and view your account
+            activity.
+          </p>
+        </section>
+
+        <!-- Summary Cards -->
+        <section class="summary-cards-section">
+          <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="summary-card">
+                <h4>Account Balance</h4>
+                <p class="amount">$25,750.00</p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="summary-card">
+                <h4>Total Profit</h4>
+                <p class="amount" style="color: #28a745">+$5,750.00</p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-12 mb-4">
+              <div class="summary-card">
+                <h4>Active Investments</h4>
+                <p class="amount">3</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Quick Actions -->
+        <section class="quick-actions">
+          <a href="#" class="btn btn-primary">Make a Deposit</a>
+          <a href="#" class="btn btn-outline-primary">Withdraw Funds</a>
+          <a href="trade/plans.html" class="btn btn-primary">New Investment</a>
+        </section>
+
+        <!-- Recent Transactions -->
+        <section class="transactions-section">
+          <h2 class="mb-4 font-weight-bold">Recent Transactions</h2>
+          <div class="table-responsive">
+            <table class="table transactions-table">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Type</th>
+                  <th>Amount</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>2024-07-20</td>
+                  <td>Deposit</td>
+                  <td>$10,000.00</td>
+                  <td>
+                    <span class="status status-completed">Completed</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2024-07-18</td>
+                  <td>Withdrawal</td>
+                  <td>$2,000.00</td>
+                  <td>
+                    <span class="status status-completed">Completed</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2024-07-15</td>
+                  <td>Investment</td>
+                  <td>$5,000.00 (Starter Plan)</td>
+                  <td><span class="status status-active">Active</span></td>
+                </tr>
+                <tr>
+                  <td>2024-07-10</td>
+                  <td>Deposit</td>
+                  <td>$500.00</td>
+                  <td>
+                    <span class="status status-completed">Completed</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2024-07-09</td>
+                  <td>Profit Payout</td>
+                  <td>$150.00</td>
+                  <td>
+                    <span class="status status-completed">Completed</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <a href="index.html"
+              ><img
+                src="images/logomain1.png"
+                alt="wealthGrid Finance Logo"
+                style="height: 90px; width: auto"
+            /></a>
+          </div>
+          <div class="footer-links">
+            <div>
+              <h6>Our Company</h6>
+              <ul>
+                <li><a href="trade/about.html">About Us</a></li>
+                <li><a href="trade/services.html">What We Offer</a></li>
+                <li><a href="trade/legal.html">Legal</a></li>
+                <li><a href="trade/faqs.html">FAQ's</a></li>
+                <li><a href="trade/team.html">Our Team</a></li>
+              </ul>
+            </div>
+            <div>
+              <h6>Services</h6>
+              <ul>
+                <li><a href="trade/services-8.html">Forex Trading</a></li>
+                <li><a href="trade/services-5.html">Real Estate</a></li>
+                <li>
+                  <a href="trade/services-3.html">Cryptocurrency Trading</a>
+                </li>
+                <li><a href="trade/services-9.html">Gold Investments</a></li>
+                <li><a href="trade/services-1.html">Retirement Planning</a></li>
+              </ul>
+            </div>
+            <div>
+              <h6>More</h6>
+              <ul>
+                <li>
+                  <a href="trade/services-2.html">Cannabis Investments</a>
+                </li>
+                <li><a href="trade/services-6.html">Oil and Gas</a></li>
+                <li><a href="trade/services-4.html">Financial Planning</a></li>
+                <li><a href="trade/services-7.html">Loans and Grants</a></li>
+                <li><a href="trade/services-10.html">Stock Investment</a></li>
+              </ul>
+            </div>
+            <div>
+              <h6>Account</h6>
+              <ul>
+                <li><a href="signup.html">Create Account</a></li>
+                <li><a href="signin.html">Login</a></li>
+              </ul>
+              <p>
+                <b>ADDRESS:</b> Suite 1.30 Level 1, 2-8 Osbourne Street,
+                Auckland, 1023 , New Zealand
+              </p>
+            </div>
+          </div>
+          <div class="footer-disclaimer">
+            <p>
+              We are a professional team that specializes in CryptoCurrency
+              Coins trading and Crypto mining, Real Estate and Crude Oil broker,
+              Agriculture, Construction etc who know how to grab profit end of
+              the day.
+            </p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 wealthGrid Finance Investment. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
