@@ -227,7 +227,6 @@
     </header>
 
     <main class="dashboard-main">
-     
       <!-- User Profile Summary -->
       <section class="dashboard-profile-summary">
         <div class="container">
@@ -256,13 +255,13 @@
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="summary-card">
                 <h4>Account Balance</h4>
-                <p class="amount">$570,750.00</p>
+                <p class="amount">$50,750.00</p>
               </div>
             </div>
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="summary-card">
                 <h4>Total Profit</h4>
-                <p class="amount" style="color: #28a745">+$5,750.00</p>
+                <p class="amount" style="color: #28a745">+$570,000.00</p>
               </div>
             </div>
             <div class="col-lg-4 col-md-12 mb-4">
@@ -277,7 +276,7 @@
         <!-- Quick Actions -->
         <section class="quick-actions">
           <a href="#" class="btn btn-primary">Make a Deposit</a>
-          
+
           <a href="#" class="btn btn-outline-primary" id="withdraw-btn"
             >Withdraw Funds</a
           >
@@ -375,41 +374,41 @@
             </thead>
             <tbody>
               <tr>
+                <td data-label="Date">2024-07-22</td>
+                <td data-label="Type">Withdrawal</td>
+                <td data-label="Amount">$5,000.00</td>
+                <td data-label="Status">
+                  <span class="status status-failed">Failed</span>
+                </td>
+              </tr>
+              <tr>
                 <td data-label="Date">2024-07-20</td>
-                <td data-label="Type">Deposit</td>
-                <td data-label="Amount">$10,000.00</td>
+                <td data-label="Type">Profit Payout</td>
+                <td data-label="Amount">$1,000.00</td>
                 <td data-label="Status">
                   <span class="status status-completed">Completed</span>
                 </td>
               </tr>
               <tr>
                 <td data-label="Date">2024-07-18</td>
-                <td data-label="Type">Withdrawal</td>
-                <td data-label="Amount">$2,000.00</td>
-                <td data-label="Status">
-                  <span class="status status-completed">Completed</span>
-                </td>
-              </tr>
-              <tr>
-                <td data-label="Date">2024-07-15</td>
                 <td data-label="Type">Investment</td>
-                <td data-label="Amount">$5,000.00 (Starter Plan)</td>
+                <td data-label="Amount">$20,000.00 (Pro Plan)</td>
                 <td data-label="Status">
                   <span class="status status-active">Active</span>
                 </td>
               </tr>
               <tr>
-                <td data-label="Date">2024-07-10</td>
+                <td data-label="Date">2024-07-15</td>
                 <td data-label="Type">Deposit</td>
-                <td data-label="Amount">$500.00</td>
+                <td data-label="Amount">$21,750.00</td>
                 <td data-label="Status">
                   <span class="status status-completed">Completed</span>
                 </td>
               </tr>
               <tr>
-                <td data-label="Date">2024-07-09</td>
-                <td data-label="Type">Profit Payout</td>
-                <td data-label="Amount">$150.00</td>
+                <td data-label="Date">2024-07-12</td>
+                <td data-label="Type">Deposit</td>
+                <td data-label="Amount">$50,000.00</td>
                 <td data-label="Status">
                   <span class="status status-completed">Completed</span>
                 </td>
@@ -512,13 +511,13 @@
         const chartData = {
           "1m": {
             labels: ["Week 1", "Week 2", "Week 3", "Week 4"],
-            investment: [568000, 569500, 570000, 570750],
-            deposits: [558000, 559000, 559500, 560000],
+            investment: [550000, 565000, 578000, 590000],
+            deposits: [20000, 20000, 20000, 20000],
           },
           "6m": {
             labels: ["Feb", "Mar", "Apr", "May", "Jun", "Jul"],
-            investment: [552500, 558000, 560000, 565000, 568000, 570750],
-            deposits: [548000, 550000, 552000, 555000, 558000, 560000],
+            investment: [20000, 120000, 250000, 380000, 490000, 590000],
+            deposits: [20000, 20000, 20000, 20000, 20000, 20000],
           },
           "1y": {
             labels: [
@@ -536,12 +535,12 @@
               "Jul",
             ],
             investment: [
-              510000, 515000, 525000, 530000, 540000, 550000, 552500, 558000,
-              560000, 565000, 568000, 570750,
+              20000, 45000, 70000, 100000, 150000, 200000, 260000, 330000,
+              410000, 490000, 550000, 590000,
             ],
             deposits: [
-              500000, 505000, 510000, 518000, 525000, 545000, 548000, 550000,
-              552000, 555000, 558000, 560000,
+              20000, 20000, 20000, 20000, 20000, 20000, 20000, 20000, 20000,
+              20000, 20000, 20000,
             ],
           },
         };
