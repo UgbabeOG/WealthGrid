@@ -1,3 +1,195 @@
+/* Success Road Map Section Styling */
+.roadmap-section {
+  background: #f8f9fa;
+  padding: 3.5rem 0 2.5rem 0;
+  border-radius: 1.2rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 4px 24px rgba(0, 31, 63, 0.07);
+}
+.roadmap-title {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #2563eb;
+  margin-bottom: 1.2rem;
+  letter-spacing: 1px;
+}
+.roadmap-desc {
+  text-align: center;
+  color: #6b7280;
+  font-size: 1.13rem;
+  margin-bottom: 2.2rem;
+}
+.roadmap-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  position: relative;
+}
+.roadmap-card {
+  background: #fff;
+  border-radius: 1.1rem;
+  box-shadow: 0 2px 16px rgba(0, 31, 63, 0.07);
+  border: 1.5px solid #e3e8ff;
+  padding: 1.2rem 2rem;
+  min-width: 260px;
+  max-width: 540px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.roadmap-card:hover {
+  box-shadow: 0 4px 24px rgba(0, 31, 63, 0.13);
+  transform: translateY(-4px) scale(1.03);
+}
+.roadmap-card .card-title {
+  font-size: 1.13rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 0.2rem;
+}
+.roadmap-dot {
+  width: 18px;
+  height: 18px;
+  background: linear-gradient(135deg, #2563eb 60%, #fcb42d 100%);
+  border-radius: 50%;
+  position: absolute;
+  left: -34px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 3px solid #fff;
+  box-shadow: 0 2px 8px rgba(0, 31, 63, 0.1);
+  z-index: 2;
+}
+.roadmap-timeline:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, #2563eb 0%, #fcb42d 100%);
+  border-radius: 2px;
+  z-index: 1;
+}
+@media (max-width: 600px) {
+  .roadmap-section {
+    padding: 1.2rem 0 1.2rem 0;
+    border-radius: 0.5rem;
+  }
+  .roadmap-title {
+    font-size: 1.2rem;
+  }
+  .roadmap-card {
+    padding: 0.7rem 0.5rem;
+    min-width: 0;
+    max-width: 100%;
+  }
+  .roadmap-dot {
+    left: -18px;
+    width: 12px;
+    height: 12px;
+  }
+  .roadmap-timeline:before {
+    left: -6px;
+    width: 2px;
+  }
+}
+/* Investors Choice Section Styling */
+.investors-choice-section {
+  position: relative;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #0a2540;
+  border-radius: 1.2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  margin-bottom: 3rem;
+}
+.investors-choice-section .bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  opacity: 0.32;
+  border-radius: 1.2rem;
+}
+.investors-choice-section .overlay-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 3.5rem 1.5rem;
+  color: #fff;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.investors-choice-section .subtitle {
+  color: #fcb42d;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 1.2rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.13);
+}
+.investors-choice-section h3 {
+  color: #fff;
+  font-size: 2.3rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.18), 0 1.5px 0 #2563eb;
+}
+.investors-choice-section p.lead {
+  color: #f3f4f6;
+  font-size: 1.18rem;
+  margin-bottom: 2rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.13);
+}
+.investors-choice-section .btn {
+  font-size: 1.08rem;
+  font-weight: 600;
+  min-width: 150px;
+  box-shadow: 0 2px 8px rgba(0, 31, 63, 0.1);
+}
+@media (max-width: 900px) {
+  .investors-choice-section {
+    min-height: 300px;
+    border-radius: 0.7rem;
+  }
+  .investors-choice-section h3 {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 600px) {
+  .investors-choice-section {
+    min-height: 180px;
+    border-radius: 0.4rem;
+  }
+  .investors-choice-section .overlay-content {
+    padding: 1.2rem 0.5rem;
+  }
+  .investors-choice-section h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.7rem;
+  }
+  .investors-choice-section p.lead {
+    font-size: 0.98rem;
+    margin-bottom: 0.7rem;
+  }
+  .investors-choice-section .btn {
+    min-width: 100px;
+    font-size: 0.98rem;
+  }
+}
 /* Steps Section Styling */
 .steps-section {
   background: #fff;
