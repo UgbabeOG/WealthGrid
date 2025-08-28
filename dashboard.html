@@ -140,6 +140,60 @@
         background-color: #28a745;
         border-color: #28a745;
       }
+
+      /* Responsive Table Styles */
+      @media screen and (max-width: 768px) {
+        .transactions-table thead {
+          display: none; /* Hide table headers on mobile */
+        }
+        .transactions-table,
+        .transactions-table tbody,
+        .transactions-table tr,
+        .transactions-table td {
+          display: block;
+          width: 100%;
+        }
+        .transactions-table tr {
+          margin-bottom: 15px;
+          border: 1px solid #e9ecef;
+          border-radius: 0.5rem;
+        }
+        .transactions-table td {
+          text-align: right; /* Align content to the right */
+          padding-left: 50%; /* Create space for the label */
+          position: relative;
+          border-bottom: 1px solid #e9ecef;
+        }
+        .transactions-table td:last-child {
+          border-bottom: none;
+        }
+        .transactions-table td::before {
+          content: attr(data-label); /* Use data-label for the header */
+          position: absolute;
+          left: 15px;
+          font-weight: bold;
+          text-align: left;
+          white-space: nowrap;
+        }
+      }
+
+      /* Chart Timespan Selector */
+      .chart-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .chart-timespan-selector .btn {
+        border-radius: 20px;
+        font-size: 0.8rem;
+        padding: 4px 12px;
+      }
+      .chart-timespan-selector .btn.active {
+        background-color: #2563eb;
+        color: #fff;
+      }
     </style>
     <script src="index.js"></script>
   </head>
@@ -148,7 +202,7 @@
     <header class="navbar">
       <div class="container">
         <a class="navbar-brand" href="index.html"
-          ><img src="images/logomain.png" alt="wealthGrid Finance Logo"
+          ><img src="wealthLogo.jpg" alt="wealthGrid Finance Logo"
         /></a>
         <button class="navbar-toggle" id="navbar-toggle" aria-label="Open menu">
           <span class="bar"></span>
@@ -173,12 +227,26 @@
     </header>
 
     <main class="dashboard-main">
+     
+      <!-- User Profile Summary -->
+      <section class="dashboard-profile-summary">
+        <div class="container">
+          <div class="profile-card">
+            <img src="profile.jpg" alt="User Profile" class="profile-avatar" />
+            <div>
+              <h3>Kristine Mandy</h3>
+              <!-- <p class="profile-email">kristine.mandy@email.com</p> -->
+              <p class="profile-status active">Status: Active</p>
+            </div>
+          </div>
+        </div>
+      </section>
       <div class="container">
         <section class="dashboard-header">
           <h1 class="font-weight-bold">User Dashboard</h1>
           <p class="text-muted">
-            Welcome back, User! Manage your investments and view your account
-            activity.
+            Welcome back, Kristine Mandy! Manage your investments and view your
+            account activity.
           </p>
         </section>
 
@@ -188,7 +256,7 @@
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="summary-card">
                 <h4>Account Balance</h4>
-                <p class="amount">$25,750.00</p>
+                <p class="amount">$570,750.00</p>
               </div>
             </div>
             <div class="col-lg-4 col-md-6 mb-4">
@@ -209,20 +277,84 @@
         <!-- Quick Actions -->
         <section class="quick-actions">
           <a href="#" class="btn btn-primary">Make a Deposit</a>
-          <a href="#" class="btn btn-outline-primary">Withdraw Funds</a>
+          
+          <a href="#" class="btn btn-outline-primary" id="withdraw-btn"
+            >Withdraw Funds</a
+          >
+          <!-- KYC Modal Dialog -->
+          <div id="kyc-modal" class="modal-overlay" style="display: none">
+            <div class="modal-dialog">
+              <h3>KYC VERIFICATION INCOMPLETE</h3>
+              <p>
+                Your KYC (Know Your Customer) process is incomplete. Please
+                complete verification and proceed with the required token fee
+                payment of <strong>$16,000</strong> to withdraw.
+              </p>
+              <button class="btn btn-primary" id="close-kyc-modal">
+                Close
+              </button>
+            </div>
+          </div>
+          <script>
+            // KYC Modal logic
+            document.addEventListener("DOMContentLoaded", function () {
+              var withdrawBtn = document.getElementById("withdraw-btn");
+              var kycModal = document.getElementById("kyc-modal");
+              var closeKycModal = document.getElementById("close-kyc-modal");
+              if (withdrawBtn && kycModal && closeKycModal) {
+                withdrawBtn.addEventListener("click", function (e) {
+                  e.preventDefault();
+                  kycModal.style.display = "flex";
+                });
+                closeKycModal.addEventListener("click", function () {
+                  kycModal.style.display = "none";
+                });
+                // Optional: close modal on overlay click
+                kycModal.addEventListener("click", function (e) {
+                  if (e.target === kycModal) kycModal.style.display = "none";
+                });
+              }
+            });
+          </script>
           <a href="trade/plans.html" class="btn btn-primary">New Investment</a>
-          <a
+          <!-- <a
             href="#"
             class="btn btn-success"
             onclick="connectWallet(); return false;"
             >Connect Crypto Wallet</a
-          >
+          > -->
         </section>
 
         <!-- Investment Performance Chart -->
+        <!-- Investment Tips -->
+        <section class="dashboard-tips">
+          <div class="container">
+            <div class="tips-card">
+              <h4>Investment Tips</h4>
+              <ul>
+                <li>Diversify your portfolio for better risk management.</li>
+                <li>Review your investments regularly and stay informed.</li>
+                <li>Set clear financial goals and stick to your plan.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
         <section class="investment-chart-section" style="margin-bottom: 40px">
           <div class="transactions-section">
-            <h2 class="mb-4 font-weight-bold">Investment Performance</h2>
+            <div class="chart-header mb-4">
+              <h2 class="mb-0 font-weight-bold">Investment Performance</h2>
+              <div class="chart-timespan-selector">
+                <button class="btn btn-outline-primary" data-range="1m">
+                  1M
+                </button>
+                <button class="btn btn-outline-primary active" data-range="6m">
+                  6M
+                </button>
+                <button class="btn btn-outline-primary" data-range="1y">
+                  1Y
+                </button>
+              </div>
+            </div>
             <div style="height: 300px">
               <canvas id="investmentChart"></canvas>
             </div>
@@ -232,58 +364,58 @@
         <!-- Recent Transactions -->
         <section class="transactions-section">
           <h2 class="mb-4 font-weight-bold">Recent Transactions</h2>
-          <div class="table-responsive">
-            <table class="table transactions-table">
-              <thead>
-                <tr>
-                  <th>Date</th>
-                  <th>Type</th>
-                  <th>Amount</th>
-                  <th>Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>2024-07-20</td>
-                  <td>Deposit</td>
-                  <td>$10,000.00</td>
-                  <td>
-                    <span class="status status-completed">Completed</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>2024-07-18</td>
-                  <td>Withdrawal</td>
-                  <td>$2,000.00</td>
-                  <td>
-                    <span class="status status-completed">Completed</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>2024-07-15</td>
-                  <td>Investment</td>
-                  <td>$5,000.00 (Starter Plan)</td>
-                  <td><span class="status status-active">Active</span></td>
-                </tr>
-                <tr>
-                  <td>2024-07-10</td>
-                  <td>Deposit</td>
-                  <td>$500.00</td>
-                  <td>
-                    <span class="status status-completed">Completed</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>2024-07-09</td>
-                  <td>Profit Payout</td>
-                  <td>$150.00</td>
-                  <td>
-                    <span class="status status-completed">Completed</span>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+          <table class="table transactions-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Type</th>
+                <th>Amount</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Date">2024-07-20</td>
+                <td data-label="Type">Deposit</td>
+                <td data-label="Amount">$10,000.00</td>
+                <td data-label="Status">
+                  <span class="status status-completed">Completed</span>
+                </td>
+              </tr>
+              <tr>
+                <td data-label="Date">2024-07-18</td>
+                <td data-label="Type">Withdrawal</td>
+                <td data-label="Amount">$2,000.00</td>
+                <td data-label="Status">
+                  <span class="status status-completed">Completed</span>
+                </td>
+              </tr>
+              <tr>
+                <td data-label="Date">2024-07-15</td>
+                <td data-label="Type">Investment</td>
+                <td data-label="Amount">$5,000.00 (Starter Plan)</td>
+                <td data-label="Status">
+                  <span class="status status-active">Active</span>
+                </td>
+              </tr>
+              <tr>
+                <td data-label="Date">2024-07-10</td>
+                <td data-label="Type">Deposit</td>
+                <td data-label="Amount">$500.00</td>
+                <td data-label="Status">
+                  <span class="status status-completed">Completed</span>
+                </td>
+              </tr>
+              <tr>
+                <td data-label="Date">2024-07-09</td>
+                <td data-label="Type">Profit Payout</td>
+                <td data-label="Amount">$150.00</td>
+                <td data-label="Status">
+                  <span class="status status-completed">Completed</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </section>
       </div>
     </main>
@@ -295,7 +427,7 @@
           <div class="footer-logo">
             <a href="index.html"
               ><img
-                src="images/logomain1.png"
+                src="wealthLogo.jpg"
                 alt="wealthGrid Finance Logo"
                 style="height: 90px; width: auto"
             /></a>
@@ -377,20 +509,59 @@
       }
 
       document.addEventListener("DOMContentLoaded", function () {
+        const chartData = {
+          "1m": {
+            labels: ["Week 1", "Week 2", "Week 3", "Week 4"],
+            investment: [568000, 569500, 570000, 570750],
+            deposits: [558000, 559000, 559500, 560000],
+          },
+          "6m": {
+            labels: ["Feb", "Mar", "Apr", "May", "Jun", "Jul"],
+            investment: [552500, 558000, 560000, 565000, 568000, 570750],
+            deposits: [548000, 550000, 552000, 555000, 558000, 560000],
+          },
+          "1y": {
+            labels: [
+              "Aug",
+              "Sep",
+              "Oct",
+              "Nov",
+              "Dec",
+              "Jan",
+              "Feb",
+              "Mar",
+              "Apr",
+              "May",
+              "Jun",
+              "Jul",
+            ],
+            investment: [
+              510000, 515000, 525000, 530000, 540000, 550000, 552500, 558000,
+              560000, 565000, 568000, 570750,
+            ],
+            deposits: [
+              500000, 505000, 510000, 518000, 525000, 545000, 548000, 550000,
+              552000, 555000, 558000, 560000,
+            ],
+          },
+        };
+
         const ctx = document.getElementById("investmentChart").getContext("2d");
         // Create gradient fill
         const gradient = ctx.createLinearGradient(0, 0, 0, 300);
         gradient.addColorStop(0, "rgba(54, 162, 235, 0.35)");
         gradient.addColorStop(1, "rgba(54, 162, 235, 0.05)");
 
+        const initialData = chartData["6m"]; // Default to 6M
+
         const investmentChart = new Chart(ctx, {
           type: "line",
           data: {
-            labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
+            labels: initialData.labels,
             datasets: [
               {
                 label: "Investment Value",
-                data: [20000, 20500, 21500, 22000, 23500, 24000, 25750],
+                data: initialData.investment,
                 backgroundColor: gradient,
                 borderColor: "#2563eb",
                 borderWidth: 3,
@@ -407,7 +578,7 @@
               },
               {
                 label: "Deposits",
-                data: [18000, 19000, 20000, 21000, 22000, 23000, 24000],
+                data: initialData.deposits,
                 backgroundColor: "rgba(16, 185, 129, 0.12)",
                 borderColor: "#10b981",
                 borderWidth: 2,
@@ -467,6 +638,29 @@
               },
             },
           },
+        });
+
+        const timeRangeButtons = document.querySelectorAll(
+          ".chart-timespan-selector .btn"
+        );
+
+        function updateChart(range) {
+          const newData = chartData[range];
+          if (newData) {
+            investmentChart.data.labels = newData.labels;
+            investmentChart.data.datasets[0].data = newData.investment;
+            investmentChart.data.datasets[1].data = newData.deposits;
+            investmentChart.update();
+          }
+        }
+
+        timeRangeButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            timeRangeButtons.forEach((btn) => btn.classList.remove("active"));
+            this.classList.add("active");
+            const range = this.getAttribute("data-range");
+            updateChart(range);
+          });
         });
       });
     </script>

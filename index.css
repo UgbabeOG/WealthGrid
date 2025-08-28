@@ -1,3 +1,138 @@
+/* Modal Dialog Styling */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-dialog {
+  background: #fff;
+  border-radius: 1.1rem;
+  box-shadow: 0 8px 32px rgba(0, 31, 63, 0.18);
+  padding: 2.2rem 2.5rem 1.5rem 2.5rem;
+  max-width: 420px;
+  width: 90vw;
+  text-align: center;
+  position: relative;
+}
+.modal-dialog h3 {
+  color: #dc2626;
+  font-size: 1.3rem;
+  font-weight: 800;
+  margin-bottom: 1.1rem;
+}
+.modal-dialog p {
+  color: #222;
+  font-size: 1.08rem;
+  margin-bottom: 1.5rem;
+}
+.modal-dialog .btn {
+  min-width: 120px;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+@media (max-width: 600px) {
+  .modal-dialog {
+    padding: 1.2rem 0.7rem 1rem 0.7rem;
+  }
+  .modal-dialog h3 {
+    font-size: 1.05rem;
+  }
+  .modal-dialog p {
+    font-size: 0.97rem;
+  }
+}
+/* Dashboard New Features & Modern Styling */
+.dashboard-notifications {
+  margin-bottom: 1.5rem;
+}
+.notification-card {
+  background: #fffbe6;
+  color: #b45309;
+  border: 1.5px solid #fde68a;
+  border-radius: 0.7rem;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1.08rem;
+  box-shadow: 0 2px 8px rgba(251, 191, 36, 0.07);
+}
+.notification-card i.fa {
+  font-size: 1.3rem;
+  color: #f59e42;
+}
+.dashboard-profile-summary {
+  margin-bottom: 2rem;
+}
+.profile-card {
+  background: #fff;
+  border-radius: 1.1rem;
+  box-shadow: 0 2px 16px rgba(0, 31, 63, 0.07);
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1.2rem 2rem;
+  max-width: 420px;
+  margin: 0 auto 0 auto;
+}
+.profile-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2.5px solid #2563eb;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.1);
+}
+.profile-card h3 {
+  margin: 0 0 0.2rem 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+.profile-email {
+  color: #6b7280;
+  font-size: 0.98rem;
+  margin-bottom: 0.2rem;
+}
+.profile-status.active {
+  color: #10b981;
+  font-weight: 600;
+}
+.dashboard-tips {
+  margin-bottom: 2rem;
+}
+.tips-card {
+  background: #f0fdf4;
+  border: 1.5px solid #bbf7d0;
+  border-radius: 0.7rem;
+  padding: 1.2rem 2rem;
+  max-width: 420px;
+  margin: 0 auto 0 auto;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.07);
+}
+.tips-card h4 {
+  color: #10b981;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.7rem;
+}
+.tips-card ul {
+  padding-left: 1.2rem;
+  margin: 0;
+  color: #222;
+  font-size: 0.98rem;
+}
+.tips-card li {
+  margin-bottom: 0.4rem;
+}
 /* Success Road Map Section Styling */
 .roadmap-section {
   background: #f8f9fa;
